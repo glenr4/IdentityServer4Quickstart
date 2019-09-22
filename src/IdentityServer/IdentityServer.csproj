@@ -3,6 +3,37 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Quickstart\Account\AccountController.cs" />
+    <Content Include="Quickstart\Account\AccountOptions.cs" />
+    <Content Include="Quickstart\Account\ExternalController.cs" />
+    <Content Include="Quickstart\Account\ExternalProvider.cs" />
+    <Content Include="Quickstart\Account\LoggedOutViewModel.cs" />
+    <Content Include="Quickstart\Account\LoginInputModel.cs" />
+    <Content Include="Quickstart\Account\LoginViewModel.cs" />
+    <Content Include="Quickstart\Account\LogoutInputModel.cs" />
+    <Content Include="Quickstart\Account\LogoutViewModel.cs" />
+    <Content Include="Quickstart\Account\RedirectViewModel.cs" />
+    <Content Include="Quickstart\Consent\ConsentController.cs" />
+    <Content Include="Quickstart\Consent\ConsentInputModel.cs" />
+    <Content Include="Quickstart\Consent\ConsentOptions.cs" />
+    <Content Include="Quickstart\Consent\ConsentViewModel.cs" />
+    <Content Include="Quickstart\Consent\ProcessConsentResult.cs" />
+    <Content Include="Quickstart\Consent\ScopeViewModel.cs" />
+    <Content Include="Quickstart\Device\DeviceAuthorizationInputModel.cs" />
+    <Content Include="Quickstart\Device\DeviceAuthorizationViewModel.cs" />
+    <Content Include="Quickstart\Device\DeviceController.cs" />
+    <Content Include="Quickstart\Diagnostics\DiagnosticsController.cs" />
+    <Content Include="Quickstart\Diagnostics\DiagnosticsViewModel.cs" />
+    <Content Include="Quickstart\Extensions.cs" />
+    <Content Include="Quickstart\Grants\GrantsController.cs" />
+    <Content Include="Quickstart\Grants\GrantsViewModel.cs" />
+    <Content Include="Quickstart\Home\ErrorViewModel.cs" />
+    <Content Include="Quickstart\Home\HomeController.cs" />
+    <Content Include="Quickstart\SecurityHeadersAttribute.cs" />
+    <Content Include="Quickstart\TestUsers.cs" />
+  </ItemGroup>
   
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
