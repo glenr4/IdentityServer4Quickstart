@@ -227,3 +227,5 @@ Thumbs.db
 
 *.rsa
 *.txt
+
+appsettings.*.json

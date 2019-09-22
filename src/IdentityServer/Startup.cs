@@ -2,8 +2,10 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 using System;
+using IdentityServer4;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace IdentityServer
@@ -11,10 +13,12 @@ namespace IdentityServer
     public class Startup
     {
         public IHostingEnvironment Environment { get; }
+        public IConfiguration Configuration { get; }
 
-        public Startup(IHostingEnvironment environment)
+        public Startup(IHostingEnvironment environment, IConfiguration configuration)
         {
             Environment = environment;
+            Configuration = configuration;
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -27,6 +31,15 @@ namespace IdentityServer
                 .AddInMemoryApiResources(Config.GetApis())
                 .AddInMemoryClients(Config.GetClients())
                 .AddTestUsers(Config.GetUsers());
+
+            services.AddAuthentication()
+                    .AddGoogle("Google", options =>
+                    {
+                        options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
+
+                        options.ClientId = this.Configuration.GetSection("Google")["ClientID"];
+                        options.ClientSecret = this.Configuration.GetSection("Google")["ClientSecret"];
+                    });
 
             if (Environment.IsDevelopment())
             {
